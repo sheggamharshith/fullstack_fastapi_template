@@ -11,12 +11,14 @@ import { UserProvider } from "./context/UserContext";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <UserProvider>
-      <ToastContainer/>
-      <App />
-    </UserProvider>
-  </React.StrictMode>,
+  <>
+    <React.StrictMode>
+      <UserProvider>
+        <App />
+      </UserProvider>
+    </React.StrictMode>
+    <ToastContainer />
+  </>,
   document.getElementById("root")
 );
 

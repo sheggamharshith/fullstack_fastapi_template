@@ -14,7 +14,6 @@ import { useUserState } from "../context/UserContext";
 
 function App() {
   var { isAuthenticated } = useUserState();
-  console.log(isAuthenticated);
 
   return (
     <HashRouter>

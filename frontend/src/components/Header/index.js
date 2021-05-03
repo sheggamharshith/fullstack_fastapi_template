@@ -11,8 +11,8 @@ export default function Header() {
     <>
       <div className="w-full  ">
         <nav className="relative flex flex-wrap items-center justify-center px-2 py-3 bg-pmaterial shadow-xl">
-          <div className=" flex w-full font-bold text-white items-center justify-between max-w-screen-md  ">
-            <div>DashBoard</div>
+          <div className=" flex w-full font-bold text-white items-center justify-between  ">
+            <div>Full Stack Project Template</div>
             <DropDownHeader history={history} userDispatch = {userDispatch} />
           </div>
         </nav>

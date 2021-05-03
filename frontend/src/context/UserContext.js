@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import axios from "../customAxios";
 import qs from "qs";
 import { toast } from "react-toastify";
 
@@ -50,12 +50,18 @@ function useUserDispatch() {
   return context;
 }
 
-export { UserProvider, useUserState, useUserDispatch, loginUser, signOut };
+export {
+  UserProvider,
+  useUserState,
+  useUserDispatch,
+  loginUser,
+  signOut,
+  signOutWithoutDispatcher,
+};
 
 // ###########################################################
 
 function loginUser(dispatch, login, password, history, setIsLoading, setError) {
-  setError(false);
   setIsLoading(true);
   const body = qs.stringify({
     username: `${login}`,
@@ -69,33 +75,30 @@ function loginUser(dispatch, login, password, history, setIsLoading, setError) {
         },
       })
       .then((response) => {
-        console.log(response);
-        console.log(response.data.access_token);
-        console.log(response.data.toke_type);
-
         localStorage.setItem("id_token", response.data.access_token);
         localStorage.setItem("token_type", response.data.toke_type);
         setIsLoading(false);
         dispatch({ type: "LOGIN_SUCCESS" });
         history.push("/app/dashboard");
-      }).catch(
-        error =>
-        {
-          console.log(error.response.data.detail)
-          setError(`${error.response.data.detail}`)
-          setIsLoading(false)
-        }
-      )
+      })
+      .catch((error) => {
+        setError(`${error.response.data.detail}`);
+        toast.error(`${error.response.data.detail}`);
+        setIsLoading(false);
+      });
   } else {
-    dispatch({ type: "LOGIN_FAILURE" });
+    // dispatch({ type: "LOGIN_FAILURE" });
     setError("please fill the form login and password");
     setIsLoading(false);
   }
 }
 
 function signOut(dispatch, history) {
-  console.log("clickeed")
   localStorage.removeItem("id_token");
   dispatch({ type: "SIGN_OUT_SUCCESS" });
   history.push("/login");
+}
+
+function signOutWithoutDispatcher() {
+  localStorage.removeItem("id_token");
 }

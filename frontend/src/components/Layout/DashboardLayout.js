@@ -10,7 +10,7 @@ import Header from "../Header";
 
 const AdminLayout = () => {
   return (
-    <div className="layoutmain">
+    <div className="flex flex-col h-screen w-full">
         <Header/>
       <Switch>
         <Route path="/app/dashboard" component={AdminMainPage} />
