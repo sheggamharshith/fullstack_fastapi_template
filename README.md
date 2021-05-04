@@ -5,8 +5,8 @@ This is an template for the full stack project template backend with fast api an
 # Admin template
 
 <div style={{display:"flex"}}>
-<img src="https://i.ibb.co/yWTpsXy/Screenshot-from-2021-05-04-04-20-41.png"  height="260" />
-<img src="https://i.ibb.co/NTyPJ7t/Screenshot-from-2021-05-04-04-20-45.png" height="260" />
+<img src="https://i.ibb.co/yWTpsXy/Screenshot-from-2021-05-04-04-20-41.png"  height="250" />
+<img src="https://i.ibb.co/NTyPJ7t/Screenshot-from-2021-05-04-04-20-45.png" height="250" />
 <div>
 
 
