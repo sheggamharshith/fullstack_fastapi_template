@@ -7,15 +7,18 @@ import "react-toastify/dist/ReactToastify.css";
 
 // context
 import { UserProvider } from "./context/UserContext";
+import { LayoutProvider } from "./context/LayoutContext";
 
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <>
     <React.StrictMode>
-      <UserProvider>
-        <App />
-      </UserProvider>
+      <LayoutProvider>
+        <UserProvider>
+          <App />
+        </UserProvider>
+      </LayoutProvider>
     </React.StrictMode>
     <ToastContainer />
   </>,
