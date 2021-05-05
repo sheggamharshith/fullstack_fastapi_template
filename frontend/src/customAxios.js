@@ -15,7 +15,6 @@ axios.interceptors.response.use(
   },
   (error) => {
     // Do something with response error
-    console.log(error.response.status);
     if (error.response.status === 401) {
       signOutWithoutDispatcher();
     }

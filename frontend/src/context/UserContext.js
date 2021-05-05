@@ -79,7 +79,6 @@ function loginUser(dispatch, login, password, history, setIsLoading, setError) {
         localStorage.setItem("token_type", response.data.toke_type);
         setIsLoading(false);
         dispatch({ type: "LOGIN_SUCCESS" });
-        history.push("/app/dashboard");
       })
       .catch((error) => {
         setError(`${error.response.data.detail}`);

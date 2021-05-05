@@ -1,10 +1,10 @@
-from typing import Optional
+from typing import Optional,List
 
 from pydantic import BaseModel
 
 
-class DatabaseTabel(BaseModel):
-    name: Optional[str]=None
+class DatabaseTableName(BaseModel):
+    names: List[str]
 
 
 class DatabaseTabelFull(BaseException):

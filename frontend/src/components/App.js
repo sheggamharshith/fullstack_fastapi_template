@@ -8,7 +8,7 @@ import LoginPage from "../Pages/login";
 import { PrivateRoute,PublicRoute } from "../routes"
 
 //layout 
-import AdminLayout from "./Layout/DashboardLayout"
+import AdminLayout from "./Layout/AdminLayout"
 
 import { useUserState } from "../context/UserContext";
 
@@ -18,11 +18,11 @@ function App() {
   return (
     <HashRouter>
       <Switch>
-        <Route exact path="/" render={() => <Redirect to="/app/dashboard" />} />
+        <Route exact path="/" render={() => <Redirect to="/app/main"/>} />
         <Route
           exact
           path="/app"
-          render={() => <Redirect to="/app/dashboard" />}
+          render={() => <Redirect to="/app/main" />}
         />
         <PrivateRoute
           path="/app"

@@ -5,12 +5,12 @@ import {
 } from "../../context/LayoutContext";
 import { Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const sideBarLink = [
   {
-    path: "/app/dashboard",
-    name: "main",
+    path: "/app/databasetables",
+    name: "databasetable",
   },
   {
     path: "/app/main",
@@ -22,7 +22,6 @@ const SideBar = () => {
   const { isSidebarOpened } = useLayoutState();
   const layOutDispatch = useLayoutDispatch();
 
-  console.log(isSidebarOpened);
   return (
     <>
       <Transition
@@ -42,8 +41,17 @@ const SideBar = () => {
         >
           <div className="text-3xl text-center border-b-4"> Full Stack </div>
           <div className="flex flex-col gap-4  h-full items-center justify-center w-full ">
-            {sideBarLink.map((link) => (
-              <Link className="border-b p-2 w-full" to={link.path}>link.name</Link>
+            {sideBarLink.map((link, i) => (
+              <Link
+                key={i}
+                onClick={() => {
+                  toggleSidebar(layOutDispatch);
+                }}
+                className="border-b p-2 w-full"
+                to={link.path}
+              >
+                {link.name}
+              </Link>
             ))}
           </div>
         </aside>
