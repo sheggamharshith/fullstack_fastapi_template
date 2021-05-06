@@ -26,13 +26,13 @@ const getTableNames = (setTableNames, setIsLoading, setError) => {
 
 const AdminMainPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error,setError] = useState(false);
   const [tableNames, setTableNames] = useState([]);
 
   useEffect(() => {
     getTableNames(setTableNames, setIsLoading, setError);
   }, []);
-
+  console.log(error)
   return (
     <DashBoardTemplate>
       <div className="w-full h-full">

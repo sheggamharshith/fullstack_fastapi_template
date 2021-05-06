@@ -10,7 +10,7 @@ const DashBoardTemplate = ({ children }) => {
       <SideBar />
 
       <Header />
-      <div className="h-full w-full">{children}</div>
+      <div className="overflow-y-auto  h-full w-full">{children}</div>
     </div>
   );
 };
